@@ -5,6 +5,142 @@
 	<key>logFormatVersion</key>
 	<integer>10</integer>
 	<key>logs</key>
-	<dict/>
+	<dict>
+		<key>0913F2DB-B5D0-4FA2-B81C-9E97B12493FA</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>2EC3048B-7F57-41FD-B132-9CC838E21DDE</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-Spectre-2023.01.30_09-46-03-+1000.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Spectre project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Spectre</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run Spectre</string>
+			<key>timeStartedRecording</key>
+			<real>696728763.91044796</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run Spectre</string>
+			<key>uniqueIdentifier</key>
+			<string>0913F2DB-B5D0-4FA2-B81C-9E97B12493FA</string>
+		</dict>
+		<key>D6237847-DE02-4ED5-B2A5-D0C0876C1C79</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>23191C91-ED3B-4D03-AEE2-0CB99E7AD255</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-Spectre-2023.01.30_10-16-47-+1000.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Spectre project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Spectre</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run Spectre</string>
+			<key>timeStartedRecording</key>
+			<real>696730607.592942</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run Spectre</string>
+			<key>uniqueIdentifier</key>
+			<string>D6237847-DE02-4ED5-B2A5-D0C0876C1C79</string>
+		</dict>
+		<key>FFA35AB3-8BB4-43B8-BC7C-28CCB14B702D</key>
+		<dict>
+			<key>auxiliaryLogUniqueIdentifier</key>
+			<string>16FBF485-0B40-4A3E-ACEA-BA3C5CC14716</string>
+			<key>auxiliaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>className</key>
+			<string>IDESchemeActionsInvocationRecord</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>com.apple.dt.IDE.LaunchSchemeAction</string>
+			<key>fileName</key>
+			<string>Run-Spectre-2023.01.28_19-29-08-+1000.xcresult</string>
+			<key>hasAuxiliaryLog</key>
+			<true/>
+			<key>hasConsoleLog</key>
+			<true/>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>E</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>Spectre project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Spectre</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Run Spectre</string>
+			<key>timeStartedRecording</key>
+			<real>696590948.27106595</real>
+			<key>timeStoppedRecording</key>
+			<real>0.0</real>
+			<key>title</key>
+			<string>Run Spectre</string>
+			<key>uniqueIdentifier</key>
+			<string>FFA35AB3-8BB4-43B8-BC7C-28CCB14B702D</string>
+		</dict>
+	</dict>
 </dict>
 </plist>

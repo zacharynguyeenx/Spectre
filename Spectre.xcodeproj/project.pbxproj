@@ -8,12 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		E8093C872983ED0A00863BD6 /* SpectreApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8093C862983ED0A00863BD6 /* SpectreApp.swift */; };
-		E8093C892983ED0A00863BD6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8093C882983ED0A00863BD6 /* ContentView.swift */; };
+		E8093C892983ED0A00863BD6 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8093C882983ED0A00863BD6 /* WalletView.swift */; };
 		E8093C8B2983ED0B00863BD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8093C8A2983ED0B00863BD6 /* Assets.xcassets */; };
 		E8093C8E2983ED0B00863BD6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8093C8D2983ED0B00863BD6 /* Preview Assets.xcassets */; };
 		E8093C982983ED0B00863BD6 /* SpectreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8093C972983ED0B00863BD6 /* SpectreTests.swift */; };
 		E8093CA22983ED0B00863BD6 /* SpectreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8093CA12983ED0B00863BD6 /* SpectreUITests.swift */; };
 		E8093CA42983ED0B00863BD6 /* SpectreUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8093CA32983ED0B00863BD6 /* SpectreUITestsLaunchTests.swift */; };
+		E8093CB2298482E500863BD6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8093CB1298482E500863BD6 /* MainView.swift */; };
+		E8093CB4298491A900863BD6 /* NFTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8093CB3298491A900863BD6 /* NFTView.swift */; };
+		E8093CB629849CDD00863BD6 /* SwapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8093CB529849CDD00863BD6 /* SwapView.swift */; };
+		E8093CB82984A7F200863BD6 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8093CB72984A7F200863BD6 /* ActivityView.swift */; };
+		E8093CBA2985076400863BD6 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8093CB92985076400863BD6 /* BrowserView.swift */; };
+		E81835EC298732D6009AFB60 /* WalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81835EB298732D6009AFB60 /* WalletService.swift */; };
+		E81835EE29873654009AFB60 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81835ED29873654009AFB60 /* WalletViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +43,7 @@
 /* Begin PBXFileReference section */
 		E8093C832983ED0A00863BD6 /* Spectre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spectre.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8093C862983ED0A00863BD6 /* SpectreApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectreApp.swift; sourceTree = "<group>"; };
-		E8093C882983ED0A00863BD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E8093C882983ED0A00863BD6 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		E8093C8A2983ED0B00863BD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8093C8D2983ED0B00863BD6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E8093C932983ED0B00863BD6 /* SpectreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpectreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +51,14 @@
 		E8093C9D2983ED0B00863BD6 /* SpectreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpectreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8093CA12983ED0B00863BD6 /* SpectreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectreUITests.swift; sourceTree = "<group>"; };
 		E8093CA32983ED0B00863BD6 /* SpectreUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectreUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E8093CB1298482E500863BD6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		E8093CB3298491A900863BD6 /* NFTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTView.swift; sourceTree = "<group>"; };
+		E8093CB529849CDD00863BD6 /* SwapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapView.swift; sourceTree = "<group>"; };
+		E8093CB72984A7F200863BD6 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		E8093CB92985076400863BD6 /* BrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserView.swift; sourceTree = "<group>"; };
+		E81835EB298732D6009AFB60 /* WalletService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletService.swift; sourceTree = "<group>"; };
+		E81835ED29873654009AFB60 /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
+		E81835EF29874740009AFB60 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,10 +89,11 @@
 		E8093C7A2983ED0A00863BD6 = {
 			isa = PBXGroup;
 			children = (
+				E81835EF29874740009AFB60 /* .gitignore */,
+				E8093C842983ED0A00863BD6 /* Products */,
 				E8093C852983ED0A00863BD6 /* Spectre */,
 				E8093C962983ED0B00863BD6 /* SpectreTests */,
 				E8093CA02983ED0B00863BD6 /* SpectreUITests */,
-				E8093C842983ED0A00863BD6 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,8 +110,7 @@
 		E8093C852983ED0A00863BD6 /* Spectre */ = {
 			isa = PBXGroup;
 			children = (
-				E8093C862983ED0A00863BD6 /* SpectreApp.swift */,
-				E8093C882983ED0A00863BD6 /* ContentView.swift */,
+				E8093CB02983ED1600863BD6 /* Source */,
 				E8093C8A2983ED0B00863BD6 /* Assets.xcassets */,
 				E8093C8C2983ED0B00863BD6 /* Preview Content */,
 			);
@@ -125,6 +140,30 @@
 				E8093CA32983ED0B00863BD6 /* SpectreUITestsLaunchTests.swift */,
 			);
 			path = SpectreUITests;
+			sourceTree = "<group>";
+		};
+		E8093CB02983ED1600863BD6 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				E8093CB72984A7F200863BD6 /* ActivityView.swift */,
+				E8093CB92985076400863BD6 /* BrowserView.swift */,
+				E8093CB1298482E500863BD6 /* MainView.swift */,
+				E8093CB3298491A900863BD6 /* NFTView.swift */,
+				E8093C862983ED0A00863BD6 /* SpectreApp.swift */,
+				E8093CB529849CDD00863BD6 /* SwapView.swift */,
+				E81835EA298732C6009AFB60 /* Wallet */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		E81835EA298732C6009AFB60 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				E81835EB298732D6009AFB60 /* WalletService.swift */,
+				E8093C882983ED0A00863BD6 /* WalletView.swift */,
+				E81835ED29873654009AFB60 /* WalletViewModel.swift */,
+			);
+			path = Wallet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +296,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E8093C892983ED0A00863BD6 /* ContentView.swift in Sources */,
+				E81835EC298732D6009AFB60 /* WalletService.swift in Sources */,
+				E8093C892983ED0A00863BD6 /* WalletView.swift in Sources */,
+				E8093CB2298482E500863BD6 /* MainView.swift in Sources */,
+				E8093CBA2985076400863BD6 /* BrowserView.swift in Sources */,
+				E8093CB629849CDD00863BD6 /* SwapView.swift in Sources */,
 				E8093C872983ED0A00863BD6 /* SpectreApp.swift in Sources */,
+				E81835EE29873654009AFB60 /* WalletViewModel.swift in Sources */,
+				E8093CB4298491A900863BD6 /* NFTView.swift in Sources */,
+				E8093CB82984A7F200863BD6 /* ActivityView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

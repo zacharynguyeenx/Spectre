@@ -1,2 +1,9 @@
-/Users/zacharynguyen/Development/ios/Spectre/Spectre/ContentView.swift
-/Users/zacharynguyen/Development/ios/Spectre/Spectre/SpectreApp.swift
+/Users/zacharynguyen/Development/ios/Spectre/Spectre/Source/Wallet/WalletService.swift
+/Users/zacharynguyen/Development/ios/Spectre/Spectre/Source/Wallet/WalletView.swift
+/Users/zacharynguyen/Development/ios/Spectre/Spectre/Source/MainView.swift
+/Users/zacharynguyen/Development/ios/Spectre/Spectre/Source/BrowserView.swift
+/Users/zacharynguyen/Development/ios/Spectre/Spectre/Source/SwapView.swift
+/Users/zacharynguyen/Development/ios/Spectre/Spectre/Source/SpectreApp.swift
+/Users/zacharynguyen/Development/ios/Spectre/Spectre/Source/Wallet/WalletViewModel.swift
+/Users/zacharynguyen/Development/ios/Spectre/Spectre/Source/NFTView.swift
+/Users/zacharynguyen/Development/ios/Spectre/Spectre/Source/ActivityView.swift
