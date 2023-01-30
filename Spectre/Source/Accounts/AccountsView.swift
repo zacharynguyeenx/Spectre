@@ -7,42 +7,44 @@ struct AccountsView: View {
 
     var body: some View {
         VStack {
-            List {
-                ForEach(viewModel.accountItems) { item in
-                    Button {
-                        viewModel.selectAccount(with: item)
-                        accountSelected()
-                    } label: {
-                        HStack(spacing: 12) {
-                            ZStack {
-                                if item.isHighlighted {
-                                    Circle()
-                                        .strokeBorder(lineWidth: 2)
-                                        .frame(width: 45, height: 45)
-                                } else {
-                                    Circle()
-                                        .foregroundColor(Color.bluePurple)
-                                        .frame(width: 45, height: 45)
+            ScrollView {
+                LazyVStack {
+                    Spacer().frame(height: 16)
+                    ForEach(viewModel.accountItems) { item in
+                        Button {
+                            viewModel.selectAccount(with: item)
+                            accountSelected()
+                        } label: {
+                            HStack(spacing: 12) {
+                                ZStack {
+                                    if item.isHighlighted {
+                                        Circle()
+                                            .strokeBorder(lineWidth: 2)
+                                            .frame(width: 45, height: 45)
+                                    } else {
+                                        Circle()
+                                            .foregroundColor(Color.bluePurple)
+                                            .frame(width: 45, height: 45)
+                                    }
+                                    Text(item.initial).bold()
                                 }
-                                Text(item.initial).bold()
+                                VStack(alignment: .leading) {
+                                    Text(item.name)
+                                        .font(.system(size: 16, weight: .semibold))
+                                    Text(item.truncatedAddress)
+                                        .font(.system(size: 14))
+                                        .foregroundColor(.gray)
+                                }
+                                Spacer()
+                                Image(systemName: "ellipsis").padding([.trailing], 8)
                             }
-                            VStack(alignment: .leading) {
-                                Text(item.name)
-                                    .font(.system(size: 16, weight: .semibold))
-                                Text(item.truncatedAddress)
-                                    .font(.system(size: 14))
-                                    .foregroundColor(.gray)
-                            }
-                            Spacer()
-                            Image(systemName: "ellipsis").padding([.trailing], 8)
+                            .padding(12)
+                            .background(item.isHighlighted ? Color.bluePurple : Color.darkOnyxGray)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
                         }
+                        .padding([.leading, .trailing], 16)
+                        .buttonStyle(.plain)
                     }
-                    .padding(12)
-                    .background(item.isHighlighted ? Color.bluePurple : Color.darkOnyxGray)
-                    .clipShape(RoundedRectangle(cornerRadius: 10))
-                    .listRowBackground(Color.clear)
-                    .listRowSeparator(.hidden)
-                    .listRowInsets(.init(top: 16, leading: 16, bottom: 0, trailing: 16))
                 }
             }
 
@@ -64,7 +66,6 @@ struct AccountsView: View {
                 .padding()
             }
         }
-        .listStyle(.plain)
         .background(Color.background)
         .navigationTitle("Your Accounts")
         .navigationBarTitleDisplayMode(.inline)

@@ -3,6 +3,7 @@ import SwiftUI
 struct WalletView: View {
     @StateObject private var viewModel = WalletViewModel()
     @State private var settingsIsPresented = false
+    @State private var viewDidLoad = false
 
     var body: some View {
         NavigationStack {
@@ -23,7 +24,12 @@ struct WalletView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
         }
-        .onAppear { viewModel.getWalletDetails() }
+        .onAppear {
+            if !viewDidLoad {
+                viewModel.bind()
+                viewDidLoad = true
+            }
+        }
         .preferredColorScheme(.dark)
         .tabItem {
             Label("Wallet", systemImage: "dollarsign.circle.fill").labelStyle(IconOnlyLabelStyle())

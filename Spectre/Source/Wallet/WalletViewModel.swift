@@ -1,44 +1,34 @@
 import SwiftUI
 import Combine
 
-protocol WalletViewModelProtocol: ObservableObject {
-    var walletInitial: String { get }
-    var walletName: String { get }
-    var walletAddress: String { get }
-    var totalBalance: String { get }
-    var totalBalanceChange: String { get }
-    var totalBalanceChangePercentage: String { get }
-    var totalBalanceChangeColor: Color { get }
-    var tokenItems: [TokenItem] { get }
-
-    func getWalletDetails()
-}
-
-final class WalletViewModel: WalletViewModelProtocol {
+final class WalletViewModel: ObservableObject {
     // MARK: - Private properties
 
-    private let service: WalletServiceProtocol
+    private let walletService: WalletServiceProtocol
+    private let accountManager: AccountManagerProtocol
+
+    @Published private var currentAccount: Account
     @Published private var walletDetails: WalletDetails?
     private var cancellables = Set<AnyCancellable>()
     private let currencyCode = Locale.current.currency?.identifier ?? "USD"
 
     // MARK: - Lifecycle
 
-    init(service: WalletServiceProtocol = WalletService()) {
-        self.service = service
+    init(
+        walletService: WalletServiceProtocol = WalletService(),
+        accountManager: AccountManagerProtocol = AccountManager.shared
+    ) {
+        self.walletService = walletService
+        self.accountManager = accountManager
+        self.currentAccount = accountManager.currentAccount.value
     }
 
-    // MARK: - Conformance
+    // MARK: - Public
 
-    // MARK: WalletViewModelProtocol
-
-    var walletInitial: String { (walletDetails?.name.prefix(1)).map(String.init) ?? "-" }
-
-    var walletName: String { walletDetails?.name ?? "-" }
-
+    var walletInitial: String { String(currentAccount.name.prefix(1)) }
+    var walletName: String { currentAccount.name }
     var walletAddress: String {
-        guard let address = walletDetails?.address else { return "(-)" }
-        return "(\(address.prefix(4))...\(address.suffix(4)))"
+        "(\(currentAccount.address.prefix(4))...\(currentAccount.address.suffix(4)))"
     }
 
     var totalBalance: String {
@@ -59,8 +49,14 @@ final class WalletViewModel: WalletViewModelProtocol {
         walletDetails?.tokens.map { TokenItem(token: $0, currencyCode: currencyCode) } ?? []
     }
 
-    func getWalletDetails() {
-        service.getWalletDetails(address: "0xAddReSS").sink(
+    func bind() {
+        accountManager.currentAccount.compactMap { [weak self] account in
+            self?.walletDetails = nil
+            self?.currentAccount = account
+            return self?.walletService.getWalletDetails(address: account.address)
+        }
+        .switchToLatest()
+        .sink(
             receiveCompletion: { _ in },
             receiveValue: { [weak self] in self?.walletDetails = $0 }
         )
