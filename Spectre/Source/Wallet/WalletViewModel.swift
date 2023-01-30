@@ -36,11 +36,15 @@ final class WalletViewModel: ObservableObject {
     }
 
     var totalBalanceChange: String {
-        walletDetails?.totalBalanceChange.formatted(.currency(code: currencyCode)) ?? "-"
+        (walletDetails?.totalBalanceChange).map {
+            [$0 > 0 ? "+" : nil, $0.formatted(.currency(code: currencyCode))].compactMap { $0 }.joined()
+        } ?? "-"
     }
 
-    var totalBalanceChangePercentage: String {
-        (walletDetails?.totalBalanceChangePercentage).map { "\($0)%" } ?? "-"
+    var totalBalanceChangePercentage: String? {
+        (walletDetails?.totalBalanceChangePercentage).map {
+            [$0 > 0 ? "+" : nil, $0.formatted(), "%"].compactMap { $0 }.joined()
+        }
     }
 
     var totalBalanceChangeColor: Color { (walletDetails?.totalBalanceChange).changeColor }
@@ -78,7 +82,10 @@ struct TokenItem: Identifiable {
         name = token.name
         cryptoAmount = [token.cryptoAmount.formatted(), token.symbol].joined(separator: " ")
         fiatAmount = token.fiatAmount.formatted(.currency(code: currencyCode))
-        fiatAmountChange = token.fiatAmountChange.formatted(.currency(code: currencyCode))
+        fiatAmountChange = [
+            token.fiatAmountChange > 0 ? "+" : nil,
+            token.fiatAmountChange.formatted(.currency(code: currencyCode))
+        ].compactMap { $0 }.joined()
         fiatAmountChangeColor = token.fiatAmountChange.changeColor
     }
 }

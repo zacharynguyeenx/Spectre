@@ -106,12 +106,14 @@ struct WalletView: View {
                 Text(viewModel.totalBalanceChange)
                     .font(.system(size: 20, weight: .semibold))
                     .foregroundColor(viewModel.totalBalanceChangeColor)
-                Text(viewModel.totalBalanceChangePercentage)
-                    .font(.system(size: 18, weight: .medium))
-                    .foregroundColor(viewModel.totalBalanceChangeColor)
-                    .padding(2)
-                    .background(viewModel.totalBalanceChangeColor.opacity(0.25))
-                    .clipShape(RoundedRectangle(cornerRadius: 5))
+                viewModel.totalBalanceChangePercentage.map {
+                    Text($0)
+                        .font(.system(size: 18, weight: .medium))
+                        .foregroundColor(viewModel.totalBalanceChangeColor)
+                        .padding(2)
+                        .background(viewModel.totalBalanceChangeColor.opacity(0.25))
+                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                }
                 Spacer()
             }
         }

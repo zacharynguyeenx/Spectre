@@ -27,6 +27,8 @@
 		E81835F929876355009AFB60 /* AccountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81835F829876355009AFB60 /* AccountsView.swift */; };
 		E81835FB298766EF009AFB60 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81835FA298766EF009AFB60 /* AccountManager.swift */; };
 		E81835FD29876E8D009AFB60 /* AccountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81835FC29876E8D009AFB60 /* AccountsViewModel.swift */; };
+		E81836002987E6FA009AFB60 /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81835FF2987E6FA009AFB60 /* ActivityService.swift */; };
+		E81836022987EABB009AFB60 /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81836012987EABB009AFB60 /* ActivityViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		E81835F829876355009AFB60 /* AccountsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsView.swift; sourceTree = "<group>"; };
 		E81835FA298766EF009AFB60 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		E81835FC29876E8D009AFB60 /* AccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
+		E81835FF2987E6FA009AFB60 /* ActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityService.swift; sourceTree = "<group>"; };
+		E81836012987EABB009AFB60 /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +161,6 @@
 		E8093CB02983ED1600863BD6 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				E8093CB72984A7F200863BD6 /* ActivityView.swift */,
 				E8093CB92985076400863BD6 /* BrowserView.swift */,
 				E81835F3298758E5009AFB60 /* Color+Extension.swift */,
 				E8093CB1298482E500863BD6 /* MainView.swift */,
@@ -165,6 +168,7 @@
 				E8093C862983ED0A00863BD6 /* SpectreApp.swift */,
 				E8093CB529849CDD00863BD6 /* SwapView.swift */,
 				E81835F729876342009AFB60 /* Accounts */,
+				E81835FE2987E65D009AFB60 /* Activity */,
 				E81835F02987481A009AFB60 /* Settings */,
 				E81835EA298732C6009AFB60 /* Wallet */,
 			);
@@ -198,6 +202,16 @@
 				E81835FC29876E8D009AFB60 /* AccountsViewModel.swift */,
 			);
 			path = Accounts;
+			sourceTree = "<group>";
+		};
+		E81835FE2987E65D009AFB60 /* Activity */ = {
+			isa = PBXGroup;
+			children = (
+				E81835FF2987E6FA009AFB60 /* ActivityService.swift */,
+				E8093CB72984A7F200863BD6 /* ActivityView.swift */,
+				E81836012987EABB009AFB60 /* ActivityViewModel.swift */,
+			);
+			path = Activity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +350,7 @@
 				E8093CB2298482E500863BD6 /* MainView.swift in Sources */,
 				E8093CBA2985076400863BD6 /* BrowserView.swift in Sources */,
 				E8093CB629849CDD00863BD6 /* SwapView.swift in Sources */,
+				E81836022987EABB009AFB60 /* ActivityViewModel.swift in Sources */,
 				E81835F229874838009AFB60 /* SettingsView.swift in Sources */,
 				E8093C872983ED0A00863BD6 /* SpectreApp.swift in Sources */,
 				E81835EE29873654009AFB60 /* WalletViewModel.swift in Sources */,
@@ -344,6 +359,7 @@
 				E81835F4298758E5009AFB60 /* Color+Extension.swift in Sources */,
 				E81835F929876355009AFB60 /* AccountsView.swift in Sources */,
 				E8093CB82984A7F200863BD6 /* ActivityView.swift in Sources */,
+				E81836002987E6FA009AFB60 /* ActivityService.swift in Sources */,
 				E81835F629875FB9009AFB60 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
