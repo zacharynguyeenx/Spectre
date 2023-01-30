@@ -179,7 +179,7 @@ struct SwapView: View {
                     .foregroundColor(.white)
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(.indigo)
+                    .background(Color.bluePurple)
                     .clipShape(Capsule())
                     .padding()
                     .padding(.bottom)

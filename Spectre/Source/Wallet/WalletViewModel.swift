@@ -2,6 +2,7 @@ import SwiftUI
 import Combine
 
 protocol WalletViewModelProtocol: ObservableObject {
+    var walletInitial: String { get }
     var walletName: String { get }
     var walletAddress: String { get }
     var totalBalance: String { get }
@@ -30,6 +31,8 @@ final class WalletViewModel: WalletViewModelProtocol {
     // MARK: - Conformance
 
     // MARK: WalletViewModelProtocol
+
+    var walletInitial: String { (walletDetails?.name.prefix(1)).map(String.init) ?? "-" }
 
     var walletName: String { walletDetails?.name ?? "-" }
 

@@ -2,6 +2,7 @@ import SwiftUI
 
 struct WalletView: View {
     @StateObject private var viewModel = WalletViewModel()
+    @State private var settingsIsPresented = false
 
     var body: some View {
         NavigationStack {
@@ -16,7 +17,7 @@ struct WalletView: View {
                 .listStyle(.plain)
             }
             .toolbar {
-                profile
+                settings
                 title
                 scan
             }
@@ -27,18 +28,19 @@ struct WalletView: View {
         .tabItem {
             Label("Wallet", systemImage: "dollarsign.circle.fill").labelStyle(IconOnlyLabelStyle())
         }
+        .sheet(isPresented: $settingsIsPresented) { SettingsView() }
     }
 
-    var profile: ToolbarItem<(), some View> {
+    var settings: ToolbarItem<(), some View> {
         ToolbarItem(placement: .navigationBarLeading) {
             Button {
-
+                settingsIsPresented = true
             } label: {
-                Text("W")
+                Text(viewModel.walletInitial)
                     .foregroundColor(.white)
                     .font(.system(size: 10, weight: .bold))
                     .frame(width: 24, height: 24)
-                    .background(.indigo)
+                    .background(Color.bluePurple)
                     .clipShape(Circle())
                     .overlay(Circle().stroke(.white, lineWidth: 1))
             }
@@ -117,17 +119,17 @@ struct WalletView: View {
             Button("Deposit") {}
                 .padding(15)
                 .frame(maxWidth: .infinity)
-                .background(.indigo)
+                .background(Color.bluePurple)
                 .clipShape(Capsule())
             Button("Buy") {}
                 .padding(15)
                 .frame(maxWidth: .infinity)
-                .background(.indigo)
+                .background(Color.bluePurple)
                 .clipShape(Capsule())
             Button("Send") {}
                 .padding(15)
                 .frame(maxWidth: .infinity)
-                .background(.indigo)
+                .background(Color.bluePurple)
                 .clipShape(Capsule())
         }
         .padding(.bottom)

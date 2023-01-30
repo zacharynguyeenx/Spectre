@@ -21,7 +21,7 @@ struct BrowserView: View {
                     }
                     .padding(8)
                     .foregroundColor(.gray)
-                    .background(Color.gray1)
+                    .background(Color.darkElfGray)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     if searchFieldIsFocused {
                         Button("Cancel") {
@@ -91,14 +91,4 @@ struct BrowserView_Previews: PreviewProvider {
     static var previews: some View {
         BrowserView()
     }
-}
-
-extension Color {
-    init(r: Double, g: Double, b: Double) {
-        self.init(red: r / 255.0, green: g / 255.0, blue: b / 255.0)
-    }
-
-    static var background: Color { .init(r: 34, g: 34, b: 34)}
-    static var navBar: Color { .init(r: 45, g: 44, b: 48)}
-    static var gray1: Color { .init(r: 61, g: 62, b: 68) }
 }
