@@ -26,7 +26,9 @@ struct SettingsView: View {
                         Image(systemName: "chevron.right").padding([.trailing], 8)
                     }
                     NavigationLink {
-                        Text("Hello")
+                        AccountsView(accountSelected: {
+                            dismiss()
+                        })
                     } label: {
                         EmptyView()
                     }
@@ -78,14 +80,11 @@ struct SettingsView: View {
                     Button {
                         dismiss()
                     } label: {
-                        Image(systemName: "xmark")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 12)
-                            .foregroundColor(.white)
+                        Image(systemName: "xmark").foregroundColor(.white)
                     }
                 }
             }
+            .onAppear { viewModel.bind() }
         }
         .preferredColorScheme(.dark)
     }

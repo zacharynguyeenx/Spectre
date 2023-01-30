@@ -1,23 +1,23 @@
 import SwiftUI
-
-struct Account {
-    let name: String
-    let address: String
-}
+import Combine
 
 final class SettingsViewModel: ObservableObject {
     // MARK: - Private properties
 
-    private let account = Account(
-        name: "Transaction",
-        address: "0x6c0678df4a51f5bfa50492070b17a90613d6eae2cda9d35084e13b04ab2cbd1d"
-    )
+    private let accountManager: AccountManagerProtocol
+    @Published private var currentAccount: Account
+    private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Lifecycle
 
+    init(accountManager: AccountManagerProtocol = AccountManager.shared) {
+        self.accountManager = accountManager
+        currentAccount = accountManager.currentAccount.value
+    }
+
     // MARK: - Public
 
-    var accountItem: AccountItem { .init(account: account) }
+    var accountItem: AccountItem { .init(account: currentAccount) }
 
     let menus: [MenuItem] = [
         .init(title: "Address Book", value: nil),
@@ -30,6 +30,12 @@ final class SettingsViewModel: ObservableObject {
         .init(title: "Preferred Explorer", value: "Solscan"),
         .init(title: "About Spectre", value: nil)
     ]
+
+    func bind() {
+        accountManager.currentAccount
+            .sink { [weak self] in self?.currentAccount = $0 }
+            .store(in: &cancellables)
+    }
 }
 
 extension SettingsViewModel {

@@ -10,4 +10,5 @@ extension Color {
     static var darkElfGray: Color { .init(r: 61, g: 62, b: 68) }
     static var bluePurple: Color { .init(r: 78, g: 68, b: 206) }
     static var darkOnyxGray: Color { .init(r: 45, g: 44, b: 48) }
+    static var blackTieGray: Color { .init(r: 71, g: 71, b: 71) }
 }
