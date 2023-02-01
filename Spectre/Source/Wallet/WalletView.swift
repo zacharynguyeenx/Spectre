@@ -4,18 +4,22 @@ struct WalletView: View {
     @StateObject private var viewModel = WalletViewModel()
     @State private var settingsIsPresented = false
     @State private var viewDidLoad = false
+    @State private var tokenIsPresented = false
+    @State private var presentedToken: WalletDetails.Token?
 
     var body: some View {
         NavigationStack {
             ZStack {
                 background
-                List {
-                    Section { totalBalance }
-                    Section { actions }
-                    Section { ForEach(viewModel.tokenItems, content: tokenView(with:)) }
-                    Section { manageTokenList }
+                ScrollView {
+                    LazyVStack {
+                        totalBalance
+                        actions
+                        ForEach(viewModel.tokenItems, content: tokenView(with:))
+                        manageTokenList
+                    }
+                    .padding()
                 }
-                .listStyle(.plain)
             }
             .toolbar {
                 settings
@@ -118,71 +122,76 @@ struct WalletView: View {
             }
         }
         .padding()
-        .listRowSeparator(.hidden)
-        .listRowBackground(Color.clear)
     }
 
     var actions: some View {
         HStack(spacing: 12.0) {
-            Button("Deposit") {}
-                .padding(15)
-                .frame(maxWidth: .infinity)
-                .background(Color.bluePurple)
-                .clipShape(Capsule())
-            Button("Buy") {}
-                .padding(15)
-                .frame(maxWidth: .infinity)
-                .background(Color.bluePurple)
-                .clipShape(Capsule())
-            Button("Send") {}
-                .padding(15)
-                .frame(maxWidth: .infinity)
-                .background(Color.bluePurple)
-                .clipShape(Capsule())
+            Button {} label: {
+                Text("Deposit")
+                    .padding(15)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.bluePurple)
+                    .clipShape(Capsule())
+            }
+            Button {} label: {
+                Text("Buy")
+                    .padding(15)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.bluePurple)
+                    .clipShape(Capsule())
+            }
+            Button {} label: {
+                Text("Send")
+                    .padding(15)
+                    .frame(maxWidth: .infinity)
+                    .background(Color.bluePurple)
+                    .clipShape(Capsule())
+            }
         }
-        .padding(.bottom)
         .font(.system(size: 17, weight: .semibold))
-        .listRowSeparator(.hidden)
-        .listRowBackground(Color.clear)
+        .tint(.white)
+        .padding([.top, .bottom])
     }
 
     func tokenView(with item: TokenItem) -> some View {
-        HStack {
-            AsyncImage(url: .init(string: item.icon)) { image in
-                image.resizable().scaledToFit()
-                    .frame(width: 50, height: 50)
-            } placeholder: {
-                Image(systemName: "photo.fill")
-                    .resizable()
-                    .scaledToFit()
-                    .opacity(0.5)
-                    .padding()
-                    .frame(width: 50, height: 50)
-                    .background(.gray)
+        NavigationLink {
+            TokenView(token: item.token)
+        } label: {
+            HStack {
+                AsyncImage(url: .init(string: item.icon)) { image in
+                    image.resizable().scaledToFit()
+                        .frame(width: 50, height: 50)
+                } placeholder: {
+                    Image(systemName: "photo.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .opacity(0.5)
+                        .padding()
+                        .frame(width: 50, height: 50)
+                        .background(.gray)
+                }
+                .clipShape(Circle())
+                VStack(alignment: .leading) {
+                    Text(item.name)
+                        .font(.system(size: 17, weight: .semibold))
+                    Text(item.cryptoAmount)
+                        .font(.system(size: 15, weight: .medium))
+                        .foregroundColor(.white.opacity(0.75))
+                }
+                Spacer()
+                VStack(alignment: .trailing) {
+                    Text(item.fiatAmount)
+                        .font(.system(size: 17, weight: .semibold))
+                    Text(item.fiatAmountChange)
+                        .font(.system(size: 15, weight: .medium))
+                        .foregroundColor(item.fiatAmountChangeColor)
+                }
             }
-            .clipShape(Circle())
-            VStack(alignment: .leading) {
-                Text(item.name)
-                    .font(.system(size: 17, weight: .semibold))
-                Text(item.cryptoAmount)
-                    .font(.system(size: 15, weight: .medium))
-                    .foregroundColor(.white.opacity(0.75))
-            }
-            Spacer()
-            VStack(alignment: .trailing) {
-                Text(item.fiatAmount)
-                    .font(.system(size: 17, weight: .semibold))
-                Text(item.fiatAmountChange)
-                    .font(.system(size: 15, weight: .medium))
-                    .foregroundColor(item.fiatAmountChangeColor)
-            }
+            .padding()
+            .background(Color.gray.opacity(0.15))
+            .clipShape(RoundedRectangle(cornerRadius: 10))
         }
-        .padding()
-        .background(Color.gray.opacity(0.15))
-        .clipShape(RoundedRectangle(cornerRadius: 10))
-        .listRowSeparator(.hidden)
-        .listRowBackground(Color.clear)
-        .listRowInsets(.init(top: 4, leading: 16, bottom: 4, trailing: 16))
+        .buttonStyle(.plain)
     }
 
     var manageTokenList: some View {
@@ -198,8 +207,6 @@ struct WalletView: View {
             Spacer()
         }
         .padding(.top)
-        .listRowSeparator(.hidden)
-        .listRowBackground(Color.clear)
     }
 }
 

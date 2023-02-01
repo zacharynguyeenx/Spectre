@@ -47,7 +47,7 @@ struct BrowserView: View {
                             EmptyView()
                         } label: {
                             HStack {
-                                AsyncImage(url: .init(string: "https://pbs.twimg.com/profile_images/1609874776151183362/T1eJXDui_400x400.png")) {
+                                AsyncImage(url: .init(string: Stubs.jupiterIcon)) {
                                     $0.resizable().scaledToFit().clipShape(Circle())
                                 } placeholder: { }
                                     .frame(width: 32)

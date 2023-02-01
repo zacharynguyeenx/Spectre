@@ -70,6 +70,7 @@ final class WalletViewModel: ObservableObject {
 
 struct TokenItem: Identifiable {
     var id: String { name }
+    let token: WalletDetails.Token
     let icon: String
     let name: String
     let cryptoAmount: String
@@ -78,6 +79,7 @@ struct TokenItem: Identifiable {
     let fiatAmountChangeColor: Color
 
     init(token: WalletDetails.Token, currencyCode: String) {
+        self.token = token
         icon = token.icon
         name = token.name
         cryptoAmount = [token.cryptoAmount.formatted(), token.symbol].joined(separator: " ")

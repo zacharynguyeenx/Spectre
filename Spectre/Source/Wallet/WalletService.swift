@@ -27,10 +27,11 @@ struct WalletDetails {
     let totalBalanceChangePercentage: Double
     let tokens: [Token]
 
-    struct Token {
+    struct Token: Hashable {
         let name: String
         let icon: String
         let symbol: String
+        let address: String
         let cryptoAmount: Decimal
         let fiatAmount: Decimal
         let fiatAmountChange: Decimal
@@ -50,6 +51,7 @@ private extension WalletDetails {
                         name: "USD Coin",
                         icon: "https://s2.coinmarketcap.com/static/img/coins/64x64/3408.png",
                         symbol: "USDC",
+                        address: Stubs.usdcAddress,
                         cryptoAmount: 5.48195,
                         fiatAmount: 5.49,
                         fiatAmountChange: 0.01
@@ -58,6 +60,7 @@ private extension WalletDetails {
                         name: "Solana",
                         icon: "https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png",
                         symbol: "SOL",
+                        address: Stubs.solAddress,
                         cryptoAmount: 0.09999,
                         fiatAmount: 2.65,
                         fiatAmountChange: 0.26
@@ -74,6 +77,7 @@ private extension WalletDetails {
                         name: "Solana",
                         icon: "https://s2.coinmarketcap.com/static/img/coins/64x64/5426.png",
                         symbol: "SOL",
+                        address: Stubs.solAddress,
                         cryptoAmount: 110,
                         fiatAmount: 16560.5,
                         fiatAmountChange: 2033.124
@@ -82,6 +86,7 @@ private extension WalletDetails {
                         name: "Saber",
                         icon: "https://s2.coinmarketcap.com/static/img/coins/64x64/11181.png",
                         symbol: "SBR",
+                        address: Stubs.sbrAddress,
                         cryptoAmount: 11062.90,
                         fiatAmount: 1020.38,
                         fiatAmountChange: 224
@@ -90,6 +95,7 @@ private extension WalletDetails {
                         name: "Mango",
                         icon: "https://s2.coinmarketcap.com/static/img/coins/64x64/11171.png",
                         symbol: "MNGO",
+                        address: Stubs.mngoAddress,
                         cryptoAmount: 4239,
                         fiatAmount: 1002.947,
                         fiatAmountChange: 342.14

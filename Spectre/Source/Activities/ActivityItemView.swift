@@ -1,61 +1,21 @@
 import SwiftUI
 
-struct ActivityView: View {
-    @State private var viewDidLoad = false
-    @StateObject private var viewModel = ActivityViewModel()
+struct ActivityItemView: View {
+    let item: any ActivityItem
 
     var body: some View {
-        NavigationStack {
-            List {
-                if viewModel.activitySections.isEmpty {
-                    Spacer()
-                        .listRowSeparator(.hidden)
-                        .listRowBackground(Color.clear)
-                }
-                ForEach(viewModel.activitySections) { section in
-                    Section(section.date) {
-                        ForEach(section.items, id: \.id) { item in
-                            Button {
-                            } label: {
-                                Group {
-                                    if let item = item as? GenericActivityItem {
-                                        genericActivityView(for: item)
-                                    } else if let item = item as? TokenTransferActivityItem {
-                                        tokenTransferView(for: item)
-                                    } else if let item = item as? SwapActivityItem {
-                                        swapActivityView(for: item)
-                                    }
-                                }
-                                .padding(12)
-                                .background(.white.opacity(0.05))
-                                .clipShape(RoundedRectangle(cornerRadius: 12))
-                            }
-                            .buttonStyle(.plain)
-                        }
-                        .listRowBackground(Color.clear)
-                        .listRowSeparator(.hidden)
-                        .listRowInsets(.init(top: 4, leading: 16, bottom: 4, trailing: 16))
-                    }
-                }
-            }
-            .listStyle(.plain)
-            .navigationTitle("Recent Activity")
-            .navigationBarTitleDisplayMode(.inline)
-            .background(Color.background)
-            .toolbarBackground(Color.navBar, for: .navigationBar)
-            .toolbarBackground(.visible, for: .navigationBar)
-        }
-        .onAppear {
-            if !viewDidLoad {
-                viewModel.getActivities()
-                viewDidLoad = true
+        Group {
+            if let item = item as? GenericActivityItem {
+                genericActivityView(for: item)
+            } else if let item = item as? TokenTransferActivityItem {
+                tokenTransferView(for: item)
+            } else if let item = item as? SwapActivityItem {
+                swapActivityView(for: item)
             }
         }
-        .preferredColorScheme(.dark)
-        .tabItem {
-            Label("Activities", systemImage: "bolt.fill")
-                .labelStyle(IconOnlyLabelStyle())
-        }
+        .padding(12)
+        .background(.white.opacity(0.05))
+        .clipShape(RoundedRectangle(cornerRadius: 12))
     }
 
     func genericActivityView(for item: GenericActivityItem) -> some View {
@@ -66,7 +26,7 @@ struct ActivityView: View {
                 .padding(15)
                 .foregroundColor(item.isSuccess ? .green : .red)
                 .frame(width: 45, height: 45)
-                .background((item.isSuccess ? Color.green : Color.red).opacity(0.25))
+                .background((item.isSuccess ? Color.green : Color.red).opacity(0.15))
                 .clipShape(Circle())
 
             VStack(alignment: .leading) {
@@ -78,7 +38,7 @@ struct ActivityView: View {
                         .fontWeight(.semibold)
                         .foregroundColor(.gray)
                 }
-                item.appName.map {
+                item.provider.map {
                     Text($0)
                         .font(.system(size: 14, weight: .medium))
                         .foregroundColor(.gray)
@@ -90,19 +50,7 @@ struct ActivityView: View {
     func tokenTransferView(for item: TokenTransferActivityItem) -> some View {
         HStack {
             ZStack(alignment: .bottomTrailing) {
-                AsyncImage(url: .init(string: item.tokenIcon)) { image in
-                    image.resizable().scaledToFit()
-                        .frame(width: 45, height: 45)
-                } placeholder: {
-                    Image(systemName: "photo.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .opacity(0.5)
-                        .padding()
-                        .frame(width: 45, height: 45)
-                        .background(.gray)
-                }
-                .clipShape(Circle())
+                TokenImage(urlString: item.tokenIcon, width: 45, height: 45)
                 Image(systemName: item.actionIcon)
                     .resizable()
                     .scaledToFit()
@@ -130,19 +78,7 @@ struct ActivityView: View {
     func swapActivityView(for item: SwapActivityItem) -> some View {
         HStack {
             ZStack(alignment: .topLeading) {
-                AsyncImage(url: .init(string: item.fromTokenIcon)) { image in
-                    image.resizable().scaledToFit()
-                        .frame(width: 30, height: 30)
-                } placeholder: {
-                    Image(systemName: "photo.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .opacity(0.5)
-                        .padding()
-                        .frame(width: 30, height: 30)
-                        .background(.gray)
-                }
-                .clipShape(Circle())
+                TokenImage(urlString: item.fromTokenIcon, width: 30, height: 30)
 
                 HStack {
                     Spacer()
@@ -187,8 +123,46 @@ struct ActivityView: View {
     }
 }
 
-struct ActivityView_Previews: PreviewProvider {
+struct ActivityItemView_Previews: PreviewProvider {
     static var previews: some View {
-        ActivityView()
+        let activity = Activity(
+            transactionType: nil,
+            senderAddress: "",
+            receiverAddress: "",
+            fungibleTokenTransfers: [],
+            isSuccess: true,
+            fee: 0,
+            timestamp: Date()
+        )
+        List {
+            Group {
+                ActivityItemView(
+                    item: GenericActivityItem(
+                        activity: activity,
+                        isSuccess: true,
+                        actionName: "App Interaction",
+                        provider: nil,
+                        value: "-0.000005 SOL"
+                    )
+                )
+                ActivityItemView(
+                    item: TokenTransferActivityItem(
+                        activity: activity,
+                        tokenIcon: Stubs.gstIcon,
+                        actionIcon: "paperplane.fill",
+                        actionIconColor: Color.rockmanBlue,
+                        actionName: "Sent",
+                        address: "To: CiK9...eXbG",
+                        amount: "-29.52355 USDC",
+                        amountColor: .white
+                    )
+                )
+            }
+            .listRowBackground(Color.clear)
+            .listRowSeparator(.hidden)
+            .listRowInsets(.init(top: 4, leading: 16, bottom: 4, trailing: 16))
+        }
+        .listStyle(.plain)
+        .preferredColorScheme(.dark)
     }
 }

@@ -7,7 +7,7 @@ struct MainView: View {
             WalletView()
             NFTView()
             SwapView()
-            ActivityView()
+            ActivitiesView()
             BrowserView()
         }
         .tint(.white)

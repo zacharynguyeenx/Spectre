@@ -17,7 +17,7 @@
 		E8093CB2298482E500863BD6 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8093CB1298482E500863BD6 /* MainView.swift */; };
 		E8093CB4298491A900863BD6 /* NFTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8093CB3298491A900863BD6 /* NFTView.swift */; };
 		E8093CB629849CDD00863BD6 /* SwapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8093CB529849CDD00863BD6 /* SwapView.swift */; };
-		E8093CB82984A7F200863BD6 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8093CB72984A7F200863BD6 /* ActivityView.swift */; };
+		E8093CB82984A7F200863BD6 /* ActivitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8093CB72984A7F200863BD6 /* ActivitiesView.swift */; };
 		E8093CBA2985076400863BD6 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8093CB92985076400863BD6 /* BrowserView.swift */; };
 		E81835EC298732D6009AFB60 /* WalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81835EB298732D6009AFB60 /* WalletService.swift */; };
 		E81835EE29873654009AFB60 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81835ED29873654009AFB60 /* WalletViewModel.swift */; };
@@ -28,7 +28,15 @@
 		E81835FB298766EF009AFB60 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81835FA298766EF009AFB60 /* AccountManager.swift */; };
 		E81835FD29876E8D009AFB60 /* AccountsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81835FC29876E8D009AFB60 /* AccountsViewModel.swift */; };
 		E81836002987E6FA009AFB60 /* ActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81835FF2987E6FA009AFB60 /* ActivityService.swift */; };
-		E81836022987EABB009AFB60 /* ActivityViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81836012987EABB009AFB60 /* ActivityViewModel.swift */; };
+		E81836022987EABB009AFB60 /* ActivitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81836012987EABB009AFB60 /* ActivitiesViewModel.swift */; };
+		E818360429887AC3009AFB60 /* Stubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E818360329887AC3009AFB60 /* Stubs.swift */; };
+		E818360729887CF0009AFB60 /* TokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E818360629887CF0009AFB60 /* TokenView.swift */; };
+		E818360929887FE7009AFB60 /* ActivityItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E818360829887FE7009AFB60 /* ActivityItemView.swift */; };
+		E818360B29888186009AFB60 /* TokenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E818360A29888186009AFB60 /* TokenViewModel.swift */; };
+		E818360D29888223009AFB60 /* ActivityItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E818360C29888223009AFB60 /* ActivityItemProvider.swift */; };
+		E818361229893F1A009AFB60 /* ActivityDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E818361129893F1A009AFB60 /* ActivityDetailsView.swift */; };
+		E818361429893F52009AFB60 /* CommonUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E818361329893F52009AFB60 /* CommonUI.swift */; };
+		E81836162989C2C0009AFB60 /* ActivityDetailsViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E81836152989C2C0009AFB60 /* ActivityDetailsViewItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +70,7 @@
 		E8093CB1298482E500863BD6 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E8093CB3298491A900863BD6 /* NFTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFTView.swift; sourceTree = "<group>"; };
 		E8093CB529849CDD00863BD6 /* SwapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapView.swift; sourceTree = "<group>"; };
-		E8093CB72984A7F200863BD6 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		E8093CB72984A7F200863BD6 /* ActivitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesView.swift; sourceTree = "<group>"; };
 		E8093CB92985076400863BD6 /* BrowserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowserView.swift; sourceTree = "<group>"; };
 		E81835EB298732D6009AFB60 /* WalletService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletService.swift; sourceTree = "<group>"; };
 		E81835ED29873654009AFB60 /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
@@ -74,7 +82,15 @@
 		E81835FA298766EF009AFB60 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
 		E81835FC29876E8D009AFB60 /* AccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
 		E81835FF2987E6FA009AFB60 /* ActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityService.swift; sourceTree = "<group>"; };
-		E81836012987EABB009AFB60 /* ActivityViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewModel.swift; sourceTree = "<group>"; };
+		E81836012987EABB009AFB60 /* ActivitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewModel.swift; sourceTree = "<group>"; };
+		E818360329887AC3009AFB60 /* Stubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stubs.swift; sourceTree = "<group>"; };
+		E818360629887CF0009AFB60 /* TokenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenView.swift; sourceTree = "<group>"; };
+		E818360829887FE7009AFB60 /* ActivityItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityItemView.swift; sourceTree = "<group>"; };
+		E818360A29888186009AFB60 /* TokenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenViewModel.swift; sourceTree = "<group>"; };
+		E818360C29888223009AFB60 /* ActivityItemProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityItemProvider.swift; sourceTree = "<group>"; };
+		E818361129893F1A009AFB60 /* ActivityDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsView.swift; sourceTree = "<group>"; };
+		E818361329893F52009AFB60 /* CommonUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonUI.swift; sourceTree = "<group>"; };
+		E81836152989C2C0009AFB60 /* ActivityDetailsViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailsViewItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,13 +179,17 @@
 			children = (
 				E8093CB92985076400863BD6 /* BrowserView.swift */,
 				E81835F3298758E5009AFB60 /* Color+Extension.swift */,
+				E818361329893F52009AFB60 /* CommonUI.swift */,
 				E8093CB1298482E500863BD6 /* MainView.swift */,
 				E8093CB3298491A900863BD6 /* NFTView.swift */,
 				E8093C862983ED0A00863BD6 /* SpectreApp.swift */,
+				E818360329887AC3009AFB60 /* Stubs.swift */,
 				E8093CB529849CDD00863BD6 /* SwapView.swift */,
 				E81835F729876342009AFB60 /* Accounts */,
-				E81835FE2987E65D009AFB60 /* Activity */,
+				E81835FE2987E65D009AFB60 /* Activities */,
+				E818360E29893EFA009AFB60 /* ActivityDetails */,
 				E81835F02987481A009AFB60 /* Settings */,
+				E818360529887CDE009AFB60 /* Token */,
 				E81835EA298732C6009AFB60 /* Wallet */,
 			);
 			path = Source;
@@ -204,14 +224,34 @@
 			path = Accounts;
 			sourceTree = "<group>";
 		};
-		E81835FE2987E65D009AFB60 /* Activity */ = {
+		E81835FE2987E65D009AFB60 /* Activities */ = {
 			isa = PBXGroup;
 			children = (
+				E8093CB72984A7F200863BD6 /* ActivitiesView.swift */,
+				E81836012987EABB009AFB60 /* ActivitiesViewModel.swift */,
+				E818360C29888223009AFB60 /* ActivityItemProvider.swift */,
+				E818360829887FE7009AFB60 /* ActivityItemView.swift */,
 				E81835FF2987E6FA009AFB60 /* ActivityService.swift */,
-				E8093CB72984A7F200863BD6 /* ActivityView.swift */,
-				E81836012987EABB009AFB60 /* ActivityViewModel.swift */,
 			);
-			path = Activity;
+			path = Activities;
+			sourceTree = "<group>";
+		};
+		E818360529887CDE009AFB60 /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				E818360629887CF0009AFB60 /* TokenView.swift */,
+				E818360A29888186009AFB60 /* TokenViewModel.swift */,
+			);
+			path = Token;
+			sourceTree = "<group>";
+		};
+		E818360E29893EFA009AFB60 /* ActivityDetails */ = {
+			isa = PBXGroup;
+			children = (
+				E818361129893F1A009AFB60 /* ActivityDetailsView.swift */,
+				E81836152989C2C0009AFB60 /* ActivityDetailsViewItem.swift */,
+			);
+			path = ActivityDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,19 +387,27 @@
 				E81835EC298732D6009AFB60 /* WalletService.swift in Sources */,
 				E81835FB298766EF009AFB60 /* AccountManager.swift in Sources */,
 				E8093C892983ED0A00863BD6 /* WalletView.swift in Sources */,
+				E818360729887CF0009AFB60 /* TokenView.swift in Sources */,
 				E8093CB2298482E500863BD6 /* MainView.swift in Sources */,
 				E8093CBA2985076400863BD6 /* BrowserView.swift in Sources */,
 				E8093CB629849CDD00863BD6 /* SwapView.swift in Sources */,
-				E81836022987EABB009AFB60 /* ActivityViewModel.swift in Sources */,
+				E81836022987EABB009AFB60 /* ActivitiesViewModel.swift in Sources */,
+				E818361429893F52009AFB60 /* CommonUI.swift in Sources */,
+				E818361229893F1A009AFB60 /* ActivityDetailsView.swift in Sources */,
+				E818360D29888223009AFB60 /* ActivityItemProvider.swift in Sources */,
 				E81835F229874838009AFB60 /* SettingsView.swift in Sources */,
 				E8093C872983ED0A00863BD6 /* SpectreApp.swift in Sources */,
+				E818360429887AC3009AFB60 /* Stubs.swift in Sources */,
 				E81835EE29873654009AFB60 /* WalletViewModel.swift in Sources */,
+				E818360929887FE7009AFB60 /* ActivityItemView.swift in Sources */,
 				E8093CB4298491A900863BD6 /* NFTView.swift in Sources */,
+				E818360B29888186009AFB60 /* TokenViewModel.swift in Sources */,
 				E81835FD29876E8D009AFB60 /* AccountsViewModel.swift in Sources */,
 				E81835F4298758E5009AFB60 /* Color+Extension.swift in Sources */,
 				E81835F929876355009AFB60 /* AccountsView.swift in Sources */,
-				E8093CB82984A7F200863BD6 /* ActivityView.swift in Sources */,
+				E8093CB82984A7F200863BD6 /* ActivitiesView.swift in Sources */,
 				E81836002987E6FA009AFB60 /* ActivityService.swift in Sources */,
+				E81836162989C2C0009AFB60 /* ActivityDetailsViewItem.swift in Sources */,
 				E81835F629875FB9009AFB60 /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
